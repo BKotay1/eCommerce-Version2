@@ -7,6 +7,11 @@ import Product from './pages/Product';
 import Contact from './pages/Contact';
 import './App.css';
 
+
+
+
+
+
 const App = () => (
   <Router>
     <Routes>

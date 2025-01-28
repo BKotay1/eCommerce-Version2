@@ -1,0 +1,76 @@
+#contact-link:hover{
+    color: grey;
+  }
+
+  .motivation{
+    height: 450px;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(17, 17, 19);
+    color: white;
+    }
+    
+    .motivation-logo {
+      height: 30px;
+      width: 30px;
+    }
+    
+    .motivation-paragraph {
+    font-size: 1.5rem;
+    margin-top: 100px;
+    margin-left: 20px;
+    width: 900px;
+    }
+    
+    iframe {
+      border: none;
+      height: 373px;
+      width: 500px;
+      margin-top: 50px;
+      ;
+    }
+
+    @media screen and (min-width: 720px) and (max-width: 1180px){
+     .motivation{
+        display: block;
+     }
+     .motivation-paragraph {
+        font-size: 1.6rem;
+        margin-top: 100px;
+        margin-left: 20px;
+        }
+        iframe {
+            border: none;
+            height: 250px;
+            width: 570px;
+            margin: 50px 100px;
+            align-content: center;
+          }
+    }
+
+    @media screen and (min-width: 339px) and (max-width: 719px){
+          .motivation{
+            display: block;
+            justify-content: space-between;
+            background-color: rgb(17, 17, 19);
+            color: white;
+            }
+            
+            .motivation-logo {
+              height: 30px;
+              width: 30px;
+            }
+            
+            .motivation-paragraph {
+            font-size: 1.3rem;
+            margin-top: 100px;
+            margin-left: 20px;
+            }
+            
+            iframe {
+              border: none;
+              height: 250px;
+              width: 350px;
+              margin: 50px 150px;
+            }
+    }

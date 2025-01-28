@@ -1,0 +1,83 @@
+.video-slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .slider-video {
+    height: 900px;
+   display: flex;
+   justify-content: center;
+   margin: 0 auto;
+  }
+  
+  .arrow-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* 5px space between the arrows */
+    margin-top: 10px; /* Space between the video and arrows */
+  }
+  
+  .next-btn, .prev-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem; /* Adjust size as needed */
+    color: #fff; /* Change color as needed */
+    padding: 10px;
+    transition: transform 0.5s;
+    display: flex;
+   height: 44px;
+    margin: 80px auto;
+  }
+
+
+  
+  .prev-btn:hover, .next-btn:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  }
+
+  @media screen and (min-width: 720px) and (max-width: 1180px){
+    .slider-video {
+        height: 500px;
+        width: 400px;
+       display: flex;
+       justify-content: center;
+       margin: 0 auto;
+      }
+      .next-btn, .prev-btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 2rem; 
+        color: #fff; 
+        padding: 1px;
+        transition: transform 0.2s;
+        display: flex;
+        margin: 20px auto;
+      }
+     
+  }
+
+  @media screen and (min-width: 339px) and (max-width: 719px){
+    .slider-video {
+        height: 500px; /* Further reduce video height */
+        width: 100%; /* Keep the video full width */
+      }
+    
+      .prev-btn, .next-btn {
+        font-size: 1.5rem; /* Even smaller buttons for very small screens */
+        padding: 5px;
+      }
+    
+      .prev-btn {
+        left: -25px; /* Further adjust left position */
+      }
+    
+      .next-btn {
+        right: -25px; /* Further adjust right position */
+      }
+    }
+            
+  

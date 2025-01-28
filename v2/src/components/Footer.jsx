@@ -2,6 +2,7 @@ import React from "react";
 // import { FontAwesomeIcon } from "react-fontawesome"
 // import { faInstagram, faTwitter, faLinkedin, faFacebook, faSlack, faYoutube} from "fontawesome/free-brands-svg-icons";
 
+
 const Footer = () => {
         return (
             <footer>

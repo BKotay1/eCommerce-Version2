@@ -1,0 +1,231 @@
+
+
+.product-header{
+    background-color: rgb(17, 17, 19);
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    width: 900px;
+    display: block;
+    margin: 40px auto 0px;
+  }
+  .filters {
+    display: flex;
+    justify-content: center; /* To space out the two groups */
+    margin-bottom: 20px;
+    margin-top: -20px;
+  }
+  
+  .checkbox-group {
+    display: flex;
+   flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .checkbox-group label {
+    font-size: 1.5rem;
+    margin: 5px 50px;
+  }
+  
+  #product-quote{
+   font-size: 2.5rem;
+   color: grey;
+  }
+  
+  /* Container for the grid layout */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    width: 1500px; 
+    margin: 0 AUTO;
+    margin-bottom: 40px;
+  }
+  
+  /* Each product item inside the grid */
+  .grid {
+    display: grid;
+    width: 300px;
+    grid-gap: 10px 5px;
+    margin: 30px auto;
+    background-color: #333;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    grid-gap: 10px;  
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Light shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Product main section */
+  .product-main {
+    display: flex;
+    flex-direction: column; /* Stack the image, name, description, and price vertically */
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+  .grid {
+    width: 300px;
+    /* display: block; */
+    grid-gap: 10px 5px;
+    margin: 30px auto;
+    background-color: #333;
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
+
+  .grid:hover {
+    transform: translateY(-5px);  /* Lift the item slightly */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Deeper shadow on hover */
+  }
+
+  .product-img {
+    margin-top: 40px auto;
+    display: flex;
+  flex-direction: column;
+    justify-content: center;
+  width: 300px;
+  background-color: grey;
+  color: black;
+  height: 60%;
+  border-radius: 20px;
+  }
+  /* Text styling for the name, price, and description */
+  .name {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .price {
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .desc {
+    color: white;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .product-img:hover{
+    cursor: pointer;
+          }
+        .product-header_last{
+            font-style: italic;
+        }
+  @media screen and (min-width: 720px) and (max-width: 1180px){
+    
+  
+    .product-header {
+        margin: 30px auto 0px;
+        font-size: 1rem;
+        width: 600px;
+    }
+  
+    .filters {
+        display: flex;
+        justify-content: center; /* To space out the two groups */
+        margin-bottom: 20px;
+        margin-top: -20px;
+      }
+      
+      .checkbox-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+      
+      .checkbox-group label {
+        font-size: 1.5rem;
+        margin: 5px 50px;
+      }
+
+      .products {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        width: 700px; 
+        margin: 0 auto;
+        margin-bottom: 30px;
+      }
+      .grid {
+        width: 300px;
+        grid-gap: 10px 5px;
+        margin: 20px 10px; 
+        background-color: #333;
+        display: flex;
+      }
+      .name {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 0px;
+      }
+      
+      .price {
+        color: white;
+        font-size: 1.3rem;
+margin-bottom: 0px;
+      }
+      
+      .desc {
+        color: white;
+        font-size: 1rem;
+        margin-top: 0px;
+      }
+  }
+  
+  /* Mobile Media Queries for products page*/
+  @media screen and (min-width: 320px) and (max-width: 719px){
+    .product-header {
+        display: block;
+       font-size: 1rem;
+       width: 290px;
+       margin: 0 auto;
+       margin-top: 130px;
+    }
+  
+    .filters {
+        display: flex;
+        justify-content: center; /* To space out the two groups */
+        margin-bottom: 20px;
+        margin-top: -20px;
+      }
+      
+      .checkbox-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+      
+      .checkbox-group label {
+        font-size: 1.2rem;
+        margin: 5px 0;
+      }
+      
+      .products {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); 
+        width: 300px; 
+        margin: 0 auto;
+        margin-bottom: 30px;
+      }
+      .grid {
+        width: 270px;
+        /* display: block; */
+        grid-gap: 10px 5px;
+        margin: 20px auto; 
+        background-color: #333;
+        /* margin-bottom: 5px;
+        margin-left: 10px; */
+        display: flex;
+      }
+      .product-img {
+        margin-top: 4px auto;
+        display: flex;
+      flex-direction: column;
+        justify-content: center;
+      width: 260px;
+      background-color: grey;
+      color: black;
+      height: 275px;
+      }
+    
+  }
+  

@@ -1,9 +1,5 @@
-/* Importing external fonts and CSS */
+/* Importing external fonts and footer logos */
 @import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css'); 
 
 
-* {
-  background-attachment: black;
-}
- 

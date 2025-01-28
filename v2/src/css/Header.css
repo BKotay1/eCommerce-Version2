@@ -1,0 +1,114 @@
+.header-image {
+    position: relative;
+    margin-left: 20px;
+    width: 200px;
+    height: 155px;
+  }
+  
+  .header-image:hover {
+    cursor: pointer;
+  }
+  
+  .nav-list {
+    display: flex;
+    padding: 0px;
+    gap: 50px;
+    list-style-type: none;
+    font-size: 3rem;
+    line-height: 30px;
+    margin-right: 50px;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+    color: grey;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media screen and (min-width: 720px) and (max-width: 1180px){
+    .header-image{
+        width: 140px;
+        height: 100px;
+    }
+  
+    .nav-list {
+        font-size: 1.5rem;
+       gap: 20px;
+    }
+  }
+  
+  @media screen and (min-width: 339px) and (max-width: 719px){
+
+    .header-image {
+        width: 80px;
+        height: 80px;
+      }
+    
+      nav {
+        display: block;
+        position: relative;
+      }
+    
+      .nav-list {
+        display: none; /* Hide the menu by default */
+        margin: 30px 20px 20px;
+        font-size: 1.3rem;
+        line-height: 50px;
+        list-style: none;
+        padding: 0;
+        gap: 20px;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+      }
+    
+      .nav-list.open {
+        display: block; /* Show the menu when it's open */
+      }
+    
+      .nav-link {
+        color: white;
+        text-decoration: none;
+      }
+    
+      .nav-link:hover {
+        text-decoration: underline;
+        color: grey;
+      }
+    
+      /* Hamburger Icon Styles */
+      .hamburger {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+      }
+    
+      .hamburger .line {
+        width: 30px;
+        height: 5px;
+        background-color: white;
+        border-radius: 5px;
+      }
+    
+      /* Show hamburger menu on small screens */
+      .hamburger {
+        display: flex;
+      }
+    }
