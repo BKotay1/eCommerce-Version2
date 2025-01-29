@@ -16,7 +16,7 @@ const db = mysql2.createConnection({
 })
 
 app.get('/', (req, res) => {
-    return res.json("Hold");
+    return res.json("Hol");
 })
 
 app.get('/productinfo', (req, res)=>{
