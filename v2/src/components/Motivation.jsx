@@ -15,7 +15,6 @@ const Motivation = () => (
         allowFullScreen
       />
     </div>
-  );
-  
+  )
 
 export default Motivation;
