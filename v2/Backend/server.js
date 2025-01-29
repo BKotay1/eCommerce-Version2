@@ -8,10 +8,11 @@ const app = express()
 app.use(cors())
 
 const db = mysql2.createConnection({
-    host: 'sql5.freesqldatabase.com',
-    user: 'sql5760050',
-    password: '5lHpmwgXjL',
-    name: 'sql5760050'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password:  process.env.DB_PASSWORD,
+    database:  process.env.DB_NAME,
+    port: process.env.DB_PORT
 })
 
 app.get('/', (req, res) => {
