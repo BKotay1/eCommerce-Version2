@@ -9,7 +9,7 @@ const ProductFilter = () => {
 
   // Fetch product data from the backend when component mounts
   useEffect(() => {
-    fetch("/productinfo") // Adjust the URL to match your backend API
+    fetch("https://ecommerce-version2-cp23.onrender.com/productinfo") // Adjust the URL to match your backend API
       .then((response) => response.json())
       .then((data) => {
         setData(data);
