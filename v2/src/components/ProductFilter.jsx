@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 
 const ProductFilter = () => {
   // State for products and selected filters
-  const [data, setData] = useState([]); // Raw product data
-  const [filteredData, setFilteredData] = useState([]); // Filtered product data
-  const [selectedPrice, setSelectedPrice] = useState(["low", "medium", "high"]);
+  const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+  const [selectedPrice, setSelectedPrice] = useState(["low"]);
   const [selectedType, setSelectedType] = useState([]);
 
   // Fetch product data from the backend when component mounts
@@ -13,10 +13,10 @@ const ProductFilter = () => {
       .then((response) => response.json())
       .then((data) => {
         setData(data);
-        setFilteredData(data); // Initially show all products
+        processzData(data);
       }) // Set fetched data to the state
       .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+  }, [selectedPrice, selectedType]);
 
   // Handle price filter change (toggle selected price range)
   const handlePriceChange = (event) => {
@@ -45,38 +45,31 @@ const ProductFilter = () => {
     }
     return parseFloat(price.replace("$", "").replace(",", ""));
   };
-
   // Filter the products based on selected filters (price and type)
-  useEffect(() => {
-    if (data.length === 0) return; // Ensure data is available before processing
+  const processzData = () => {
+    setFilteredData(
+      data.filter((item) => {
+        const itemPrice = parsePrice(item.price);
 
-    const processData = () => {
-      setFilteredData(
-        data.filter((item) => {
-          const itemPrice = parsePrice(item.price);
+        // Apply price filter (check if the product's price matches any of the selected ranges)
+        const isPriceValid =
+          selectedPrice.length === 0 || // No price filter applied
+          selectedPrice.some((range) => {
+            if (range === "low") return itemPrice <= 50;
+            if (range === "medium") return itemPrice > 50 && itemPrice <= 100;
+            if (range === "high") return itemPrice > 100;
+            return false;
+          });
 
-          // Apply price filter (check if the product's price matches any of the selected ranges)
-          const isPriceValid =
-            selectedPrice.length === 0 || // No price filter applied
-            selectedPrice.some((range) => {
-              if (range === "low") return itemPrice <= 50;
-              if (range === "medium") return itemPrice > 50 && itemPrice <= 100;
-              if (range === "high") return itemPrice > 100;
-              return false;
-            });
+        // Apply type filter
+        const isTypeValid =
+          selectedType.length === 0 || selectedType.includes(item.type);
 
-          // Apply type filter
-          const isTypeValid =
-            selectedType.length === 0 || selectedType.includes(item.type);
-
-          // Only show product if both filters are satisfied
-          return isPriceValid && isTypeValid;
-        })
-      );
-    };
-
-    processData(); // Process data after filters change
-  }, [selectedPrice, selectedType, data]); // Only re-run when filters or data change
+        // Only show product if both filters are satisfied
+        return isPriceValid && isTypeValid;
+      })
+    );
+  };
 
   return (
     <div>
@@ -171,7 +164,7 @@ const ProductFilter = () => {
 
       {/* Display the filtered products */}
       <div className="products">
-        {filteredData && filteredData.length > 0 ? (
+        {filteredData.length > 0 ? (
           filteredData.map((item) => (
             <div key={item.id} className="grid">
               <div className="product-main">
@@ -191,6 +184,3 @@ const ProductFilter = () => {
 };
 
 export default ProductFilter;
-
-
-
