@@ -15,7 +15,7 @@ const Header = () => {
       <nav className="nav">
         {/* Logo */}
         <Link to="/">
-          <img src="/public/images/header-logo.png" alt="Header Logo" className="header-image" />
+          <img src="/images/header-logo.png" alt="Header Logo" className="header-image" />
         </Link>
 
         {/* Hamburger Icon (only visible on mobile) */}

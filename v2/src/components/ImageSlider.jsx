@@ -4,9 +4,9 @@ import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
 const ImageSlider = () => {
   // Define the videos in an array
   const videos = [
-    "./public/video/first.MOV",
-    "./public/video/second.mov",
-    "./public/video/third.MOV",
+    "/video/first.mov",
+    "/video/second.mov",
+    "/video/third.mov",
   ];
 
   // Set the initial video index

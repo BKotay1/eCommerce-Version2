@@ -6,7 +6,7 @@ import React from "react";
 const Footer = () => {
         return (
             <footer>
-                <img src="./public/images/footer-logo.png" alt="footer-logo" class="footer-logo"></img>
+                <img src="/images/footer-logo.png" alt="footer-logo" class="footer-logo"></img>
               <div className="footer-icons">
                 <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
                   <i className="fa-brands fa-instagram"></i>

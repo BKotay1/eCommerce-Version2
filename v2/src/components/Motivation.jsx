@@ -4,7 +4,7 @@ import React from 'react';
 const Motivation = () => (
     <div className="motivation">
       <div className="motivation-paragraph">
-        Gain The Purpose! Watch this video that inspired the creation of <img src="/public/images/motivation.png" alt="motivation logo" className="motivation-logo" />
+        Gain The Purpose! Watch this video that inspired the creation of <img src="/images/motivation.png" alt="motivation logo" className="motivation-logo" />
         . For more information, Let's Head to the <a href="/contact" id="contact-link">Contact Page!</a>
       </div>
       <iframe
