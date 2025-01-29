@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 const ProductFilter = () => {
   // State for products and selected filters
   const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [selectedPrice, setSelectedPrice] = useState([]);
   const [selectedType, setSelectedType] = useState([]);
 
@@ -10,7 +11,10 @@ const ProductFilter = () => {
   useEffect(() => {
     fetch("https://ecommerce-version2-cp23.onrender.com") // Adjust the URL to match your backend API
       .then((response) => response.json())
-      .then((data) => setData(data)) // Set fetched data to the state
+      .then((data) => {
+        setData(data);
+        processzData(data);
+      }) // Set fetched data to the state
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
@@ -37,31 +41,35 @@ const ProductFilter = () => {
   // Helper function to parse price correctly
   const parsePrice = (price) => {
     if (typeof price !== "string") {
-      price = String(price);  // Convert to string if it's not
+      price = String(price); // Convert to string if it's not
     }
     return parseFloat(price.replace("$", "").replace(",", ""));
   };
   // Filter the products based on selected filters (price and type)
-  const filteredData = data.filter((item) => {
-    const itemPrice = parsePrice(item.price);
+  const processzData = () => {
+    setFilteredData(
+      data.filter((item) => {
+        const itemPrice = parsePrice(item.price);
 
-    // Apply price filter (check if the product's price matches any of the selected ranges)
-    const isPriceValid =
-      selectedPrice.length === 0 || // No price filter applied
-      selectedPrice.some((range) => {
-        if (range === "low") return itemPrice <= 50;
-        if (range === "medium") return itemPrice > 50 && itemPrice <= 100;
-        if (range === "high") return itemPrice > 100;
-        return false;
-      });
+        // Apply price filter (check if the product's price matches any of the selected ranges)
+        const isPriceValid =
+          selectedPrice.length === 0 || // No price filter applied
+          selectedPrice.some((range) => {
+            if (range === "low") return itemPrice <= 50;
+            if (range === "medium") return itemPrice > 50 && itemPrice <= 100;
+            if (range === "high") return itemPrice > 100;
+            return false;
+          });
 
-    // Apply type filter
-    const isTypeValid =
-      selectedType.length === 0 || selectedType.includes(item.type);
+        // Apply type filter
+        const isTypeValid =
+          selectedType.length === 0 || selectedType.includes(item.type);
 
-    // Only show product if both filters are satisfied
-    return isPriceValid && isTypeValid;
-  });
+        // Only show product if both filters are satisfied
+        return isPriceValid && isTypeValid;
+      })
+    );
+  };
 
   return (
     <div>
