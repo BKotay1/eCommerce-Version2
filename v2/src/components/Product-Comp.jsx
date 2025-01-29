@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 function Products() {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("https://ecommerce-v2-gtbp.onrender.com/productinfo")
+    fetch("https://ecommerce-version2-cp23.onrender.com/productinfo")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => setData(err));
