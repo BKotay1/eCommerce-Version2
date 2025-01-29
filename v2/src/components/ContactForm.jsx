@@ -105,7 +105,7 @@ const ContactForm = () => {
             ) : (
               <>
                 <p>
-                  Contact <img src="./public/images/contact-logo.png" alt="contact logo" className="contact-img" /> for more...
+                  Contact <img src="/images/contact-logo.png" alt="contact logo" className="contact-img" /> for more...
                 </p>
                 <ul>
                   <li>Personalized programs to fit your every need</li>
@@ -165,7 +165,7 @@ const ContactForm = () => {
           </form>
 
           <div className="contact-details">
-            <h3>Get in Touch. Stay in Touch <img src="./public/images/contact-logo.png" alt="contact logo" className="contact-img" /></h3>
+            <h3>Get in Touch. Stay in Touch <img src="/images/contact-logo.png" alt="contact logo" className="contact-img" /></h3>
             <p>Email: <a href="mailto:info@bkathletix.org">info@bkathletix.org</a></p>
             <p>Phone: +1 (800)-343-6734</p>
             <p>Address: 1423 Red Ventures Dr, Fort Mill, SC 29707</p>
