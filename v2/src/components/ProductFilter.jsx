@@ -4,7 +4,7 @@ const ProductFilter = () => {
   // State for products and selected filters
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
-  const [selectedPrice, setSelectedPrice] = useState(["low"]);
+  const [selectedPrice, setSelectedPrice] = useState([]);
   const [selectedType, setSelectedType] = useState([]);
 
   // Fetch product data from the backend when component mounts
