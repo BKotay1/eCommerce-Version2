@@ -16,7 +16,7 @@ const ProductFilter = () => {
         processzData(data);
       }) // Set fetched data to the state
       .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+  }, [selectedPrice, selectedType]);
 
   // Handle price filter change (toggle selected price range)
   const handlePriceChange = (event) => {
