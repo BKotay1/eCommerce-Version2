@@ -12,9 +12,10 @@ const ProductFilter = () => {
     fetch("https://ecommerce-version2-cp23.onrender.com/productinfo") // Adjust the URL to match your backend API
       .then((response) => response.json())
       .then((data) => {
+        console.log("Fetched data:", data); // Log the fetched data
         setData(data);
-        setFilteredData(data); // Set all data as filtered initially
-      }) // Set fetched data to the state
+        setFilteredData(data); // Set the initial filtered data to all products
+      })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
@@ -48,6 +49,8 @@ const ProductFilter = () => {
 
   // Filter the products based on selected filters (price and type)
   useEffect(() => {
+    if (data.length === 0) return; // Ensure data is available before processing
+
     const processData = () => {
       setFilteredData(
         data.filter((item) => {
@@ -73,8 +76,8 @@ const ProductFilter = () => {
       );
     };
 
-    processData(); // Process data every time filters change
-  }, [selectedPrice, selectedType, data]);
+    processData(); // Process data after filters change
+  }, [selectedPrice, selectedType, data]); // Only re-run when filters or data change
 
   return (
     <div>
@@ -169,7 +172,7 @@ const ProductFilter = () => {
 
       {/* Display the filtered products */}
       <div className="products">
-        {filteredData.length > 0 ? (
+        {filteredData && filteredData.length > 0 ? (
           filteredData.map((item) => (
             <div key={item.id} className="grid">
               <div className="product-main">
@@ -189,4 +192,5 @@ const ProductFilter = () => {
 };
 
 export default ProductFilter;
+
 
