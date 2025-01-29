@@ -7,7 +7,7 @@ function Products() {
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => setData(err));
-  }, []);
+  }, [])
 
   return (
     <>
