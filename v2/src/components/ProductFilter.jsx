@@ -36,9 +36,11 @@ const ProductFilter = () => {
 
   // Helper function to parse price correctly
   const parsePrice = (price) => {
+    if (typeof price !== "string") {
+      price = String(price);  // Convert to string if it's not
+    }
     return parseFloat(price.replace("$", "").replace(",", ""));
   };
-
   // Filter the products based on selected filters (price and type)
   const filteredData = data.filter((item) => {
     const itemPrice = parsePrice(item.price);
