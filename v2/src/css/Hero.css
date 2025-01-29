@@ -7,12 +7,13 @@
   }
   .hero-desc_container{
   display: flex;
-  }
+  justify-content: center;
+  } 
   
   .hero-desc{
     display: block;
-    font-size: 8.5rem;
-    margin-left: 90px;
+    font-size: 6.5rem;
+    margin-left: 50px;
   }
 
   video{

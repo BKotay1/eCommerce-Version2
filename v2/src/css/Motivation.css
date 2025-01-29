@@ -35,14 +35,14 @@
         display: block;
      }
      .motivation-paragraph {
-        font-size: 1.6rem;
+        font-size: 1.25rem;
         margin-top: 100px;
         margin-left: 20px;
+        width: 100%;
         }
         iframe {
             border: none;
             height: 250px;
-            width: 570px;
             margin: 50px 100px;
             align-content: center;
           }
@@ -50,10 +50,12 @@
 
     @media screen and (min-width: 339px) and (max-width: 719px){
           .motivation{
+            padding-top: 15px;
             display: block;
             justify-content: space-between;
             background-color: rgb(17, 17, 19);
             color: white;
+            padding-bottom: 100px;
             }
             
             .motivation-logo {
@@ -62,15 +64,15 @@
             }
             
             .motivation-paragraph {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-top: 100px;
             margin-left: 20px;
+            width: 100%;
             }
             
             iframe {
               border: none;
               height: 250px;
               width: 350px;
-              margin: 50px 150px;
             }
     }

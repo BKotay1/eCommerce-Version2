@@ -1,5 +1,4 @@
 import React from 'react';
-// src/pages/Home.jsx
 import Header from '../components/header';
 import Hero from '../components/Hero';
 import Motivation from '../components/Motivation';
