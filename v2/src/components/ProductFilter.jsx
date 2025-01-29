@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 
 const ProductFilter = () => {
   // State for products and selected filters
-  const [data, setData] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
+  const [data, setData] = useState([]); // Raw product data
+  const [filteredData, setFilteredData] = useState([]); // Filtered product data
   const [selectedPrice, setSelectedPrice] = useState(["low", "medium", "high"]);
   const [selectedType, setSelectedType] = useState([]);
 
@@ -12,10 +12,9 @@ const ProductFilter = () => {
     fetch("https://ecommerce-version2-cp23.onrender.com/productinfo") // Adjust the URL to match your backend API
       .then((response) => response.json())
       .then((data) => {
-        console.log("Fetched data:", data); // Log the fetched data
         setData(data);
-        setFilteredData(data); // Set the initial filtered data to all products
-      })
+        setFilteredData(data); // Initially show all products
+      }) // Set fetched data to the state
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
@@ -192,5 +191,6 @@ const ProductFilter = () => {
 };
 
 export default ProductFilter;
+
 
 
