@@ -8,9 +8,9 @@ const ProductFilter = () => {
 
   // Fetch product data from the backend when component mounts
   useEffect(() => {
-    fetch("http://localhost:8081/productinfo")  // Adjust the URL to match your backend API
+    fetch("https://ecommerce-v2-gtbp.onrender.com/productinfo") // Adjust the URL to match your backend API
       .then((response) => response.json())
-      .then((data) => setData(data))  // Set fetched data to the state
+      .then((data) => setData(data)) // Set fetched data to the state
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
@@ -36,7 +36,7 @@ const ProductFilter = () => {
 
   // Helper function to parse price correctly
   const parsePrice = (price) => {
-    return parseFloat(price.replace('$', '').replace(',', ''));
+    return parseFloat(price.replace("$", "").replace(",", ""));
   };
 
   // Filter the products based on selected filters (price and type)
@@ -54,7 +54,8 @@ const ProductFilter = () => {
       });
 
     // Apply type filter
-    const isTypeValid = selectedType.length === 0 || selectedType.includes(item.type);
+    const isTypeValid =
+      selectedType.length === 0 || selectedType.includes(item.type);
 
     // Only show product if both filters are satisfied
     return isPriceValid && isTypeValid;
