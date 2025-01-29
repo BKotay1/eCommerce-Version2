@@ -16,7 +16,11 @@ const db = mysql2.createConnection({
 })
 
 app.get('/', (req, res) => {
-    return res.json("Hol");
+    const sql = "Select * FROM products";
+    db.query(sql, (err, data)=> {
+        if(err) return res.json(err);
+        return res.json(data)
+    })
 })
 
 app.get('/productinfo', (req, res)=>{
